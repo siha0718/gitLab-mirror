@@ -6,12 +6,11 @@ import java.io.InputStreamReader;
 
 
 
-public class BOJ_17478 {
+public class Main_BJ_17478_재귀함수가뭔가요 {
 	
 	static int count = 0;
 	
-	public static void Recursive(int n, int cnt) {	
-		
+	public static void Recursive(int n, int cnt) {			
 				
 		String str = "";
 		
@@ -35,10 +34,15 @@ public class BOJ_17478 {
 		}
 		
 		Recursive(n-1, cnt+1);
-		System.out.println(str + "라고 답변하였지.");	
-		
+		System.out.println(str + "라고 답변하였지.");			
 		
 	}	
+	
+	
+	
+	
+	
+	
 	
 	
 
