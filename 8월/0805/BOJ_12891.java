@@ -38,7 +38,7 @@ public class BOJ_12891 {
 			count[dna.indexOf(str.charAt(i - 1))]--;
 			count[dna.indexOf(str.charAt(i + P - 1))]++;
 
-			if (validCheck())
+			if (validCheck())			// 추가된 문자열이 유효하면 결과값 + 1
 				ans++;
 		}
 
@@ -49,7 +49,7 @@ public class BOJ_12891 {
 	static boolean validCheck() {
 		boolean valid = true;
 		for (int j = 0; j < 4; j++) {
-			if (count[j] < required[j]) {
+			if (count[j] < required[j]) {			//요구한 최소문자열 개수보다 작다면 false
 				valid = false;
 			}
 		}
