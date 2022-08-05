@@ -28,9 +28,9 @@ public class BOJ_12891 {
 
 		// 맨 처음 P칸 검사
 		for (int i = 0; i < P; i++) {
-			count[dna.indexOf(str.charAt(i))]++;	//str문자열을 하나씩 비교('A' == dna[0])
+			count[dna.indexOf(str.charAt(i))]++;		//str문자열을 하나씩 비교('A' == dna[0])
 		}
-		if (validCheck())							//최소 개수를 만족하는지 체크
+		if (validCheck())								//최소 개수를 만족하는지 체크
 			ans++;
 
 		// 한 칸씩 전진하며 이전 문자를 빼고 추가된 문자를 더한 후 유효성 검사
