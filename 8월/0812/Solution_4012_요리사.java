@@ -92,7 +92,7 @@ public class Solution_4012_요리사 {
 		
 		
 		//N까지의 모든 수에 대해,
-		//이미 조합이 선택되었다면 선택하지 않기위해 visited함수를 사용하여 중복 추출을 방지함		
+		//사용한 원소 체크 및 방문한 위치는  A리스트에 저장, 방문하지 않은 위치는 B리스트에 저장하기위해 visited함수를 사용
 		for(int i=start; i<N;i++) {
 			visited[i] = true;
 			comb(i+1, cnt+1);
