@@ -1,12 +1,11 @@
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_BJ_1987_알파벳 {
+public class Main_BJ_1987_알파벳3 {
 	
 	static int R, C, cnt;
-	static char[][] board;
+	static int[][] board;
 	static boolean[] alphabet = new boolean[26];
 	static int[] dx = { -1, 0, 1,  0};	//상 우 하 좌
 	static int[] dy = {  0, 1, 0, -1};
@@ -17,15 +16,16 @@ public class Main_BJ_1987_알파벳 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
+		
 		R = Integer.parseInt(st.nextToken());
 		C = Integer.parseInt(st.nextToken());
 		
-		board = new char[R][C];
+		board = new int[R][C];
 		
-		for(int i=0;i<R;i++) {
+		for (int i = 0; i < R; i++) {
 			String str = br.readLine();
-			for(int j=0;j<C;j++) {
-				board[i] = str.toCharArray();
+			for (int j = 0; j < C; j++) {
+				board[i][j] = str.charAt(j) - 'A';
 			}
 		}
 		
@@ -43,7 +43,7 @@ public class Main_BJ_1987_알파벳 {
 		
 		if(max == 26)	return;
 		
-		alphabet[board[x][y] - 65] = true;
+		alphabet[board[x][y]] = true;
 		
 		int nx, ny;
 		
@@ -52,13 +52,13 @@ public class Main_BJ_1987_알파벳 {
 			nx = x + dx[i];
 			ny = y + dy[i];
 			
-			if(nx >= 0 && nx < R && ny >= 0 && ny < C && !alphabet[board[nx][ny] - 65]) {
-				alphabet[board[nx][ny] - 65] = true;
+			if(nx >= 0 && nx < R && ny >= 0 && ny < C && !alphabet[board[nx][ny]]) {
+				alphabet[board[nx][ny]] = true;
 				dfs(nx, ny, cnt+1);
-				alphabet[board[nx][ny] - 65] = false;
+				alphabet[board[nx][ny]] = false;
 				
 			}
-			
+		
 			
 		}
 		
